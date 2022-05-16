@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import sourceData from '@/data'
 import CategoryList from '@/components/category/CategoryList'
 
 export default {
@@ -14,9 +13,9 @@ export default {
     CategoryList
   },
 
-  data () {
-    return {
-      categories: Object.values(sourceData.categories)
+  computed: {
+    categories () {
+      return Object.values(this.$store.state.categories)
     }
   }
 }
